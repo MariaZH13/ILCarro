@@ -16,7 +16,7 @@ public class HelperUser extends HelperBase{
         type(By.id("password"),password);
     }
 
-    public void submitLogin(){
+    public void submitLoginYalla(){
 
         click(By.cssSelector("button[type='submit"));
 

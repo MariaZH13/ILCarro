@@ -20,9 +20,9 @@ public class LoginTests extends TestBase{
         String email = "marzh@gmail.com", password = "Qwert123$";
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(email,password);
-        app.getUser().submitLogin();
+        app.getUser().submitLoginYalla();
         app.getUser().pause(3000);
-        Assert.assertTrue(app.getUser().isElementPresent(By.cssSelector("button[type='button']")));
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
 
     }
 
