@@ -21,7 +21,7 @@ public class LoginTests extends TestBase{
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(email,password);
         app.getUser().submitLogin();
-       // app.getUser().pause(3000);
+        app.getUser().pause(3000);
         Assert.assertTrue(app.getUser().isElementPresent(By.cssSelector("button[type='button']")));
 
     }
