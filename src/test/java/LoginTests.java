@@ -21,8 +21,10 @@ public class LoginTests extends TestBase{
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(email,password);
         app.getUser().submitLoginYalla();
+      //  Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
+        app.getUser().click(By.cssSelector("button[type='button']"));
         app.getUser().pause(3000);
-        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//a[.=' Logout ']")));
 
     }
 
