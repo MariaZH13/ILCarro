@@ -58,7 +58,10 @@ public class LoginCheck extends TestBase{
 
         @AfterMethod
     public void postcondition(){
-            app.getUser().click(By.cssSelector("button[type='button']"));
+
+         if(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']"))){
+             app.getUser().click(By.cssSelector("button[type='button']"));
+         }
 
 
         }
