@@ -1,4 +1,6 @@
 import models.User;
+import org.openqa.selenium.By;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -9,8 +11,10 @@ public class LoginCheck extends TestBase{
     @BeforeMethod
     public void precondition(){
 
-    }
-
+            if(app.getUser().isLogged()){
+                app.getUser().logOut();
+            }
+        }
 
 
     @Test
@@ -19,6 +23,8 @@ public class LoginCheck extends TestBase{
        app.getUser().openLoginForm();
        app.getUser().fillLoginForm("marzh@gmail.com","Qwert123$");
        app.getUser().submitLoginYalla();
+       app.getUser().pause(3000);
+       Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
 
     }
 
@@ -33,6 +39,8 @@ public class LoginCheck extends TestBase{
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user.getEmail(), user.getPassword());
         app.getUser().submitLoginYalla();
+        app.getUser().pause(3000);
+        Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
 
     }
 
@@ -43,11 +51,15 @@ public class LoginCheck extends TestBase{
             app.getUser().openLoginForm();
             app.getUser().fillLoginForm(user);
             app.getUser().submitLoginYalla();
+            app.getUser().pause(3000);
+            Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
 
         }
 
         @AfterMethod
     public void postcondition(){
+            app.getUser().click(By.cssSelector("button[type='button']"));
+
 
         }
 }
