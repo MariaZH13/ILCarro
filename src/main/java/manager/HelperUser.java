@@ -1,5 +1,6 @@
 package manager;
 
+import models.User;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -15,10 +16,16 @@ public class HelperUser extends HelperBase{
         type(By.id("email"),email);
         type(By.id("password"),password);
     }
+    // overloading
+    public void fillLoginForm(User user){
+        type(By.id("email"),user.getEmail());
+        type(By.id("password"),user.getPassword());
+    }
+
+    // method signature - type + name + parameters types
 
     public void submitLoginYalla(){
-
-        click(By.cssSelector("button[type='submit"));
+       wd.findElement(By.cssSelector("button[type='submit']")).submit();
 
     }
 
