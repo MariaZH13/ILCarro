@@ -36,4 +36,12 @@ public class HelperUser extends HelperBase{
     public boolean isLogged(){
         return isElementPresent(By.xpath("//a[.=' Logout ']"));
     }
+
+    public void closePopUpWindow(){
+        click(By.cssSelector("button[type='button']"));
+    }
+    public boolean isPopUpWindowPresent(){
+        return isElementPresent(By.xpath("//h1[.='Logged in']"));
+    }
+
 }
