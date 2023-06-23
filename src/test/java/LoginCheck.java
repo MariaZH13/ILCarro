@@ -52,17 +52,19 @@ public class LoginCheck extends TestBase{
             app.getUser().fillLoginForm(user);
             app.getUser().submitLoginYalla();
             app.getUser().pause(3000);
-            Assert.assertTrue(app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
+            Assert.assertTrue(app.getUser().isLoggedSuccessful());
 
         }
 
         @AfterMethod
     public void postcondition(){
 
-         if(app.getUser().isPopUpWindowPresent()){
-             app.getUser().closePopUpWindow();
+  //       if(app.getUser().isLoggedSuccessful()){
+ //            app.getUser().closePopUpWindow();
+            app.getUser().closePopUpWindow();
+
          }
 
 
         }
-}
+
