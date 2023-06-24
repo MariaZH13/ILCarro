@@ -31,10 +31,13 @@ public class LoginCheck extends TestBase{
     @Test
     public void loginPositiveUser() {
 //        User user = new User("marzh@gmail.com","Qwert123$");
-        User user = new User()
+        User user = User.builder()
+                .email("marzh@gmail.com")
+                .password("Qwert123$")
+                .build();
 //        user.setEmail("marzh@gmail.com");
 //        user.setPassword("Qwert123$");
-                .withEmail("marzh@gmail.com").withPassword("Qwert123$");
+ //               .withEmail("marzh@gmail.com").withPassword("Qwert123$");
 
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(user.getEmail(), user.getPassword());
@@ -46,7 +49,10 @@ public class LoginCheck extends TestBase{
 
         @Test
         public void loginPositiveUserData(){
-            User user = new User().withEmail("marzh@gmail.com").withPassword("Qwert123$");
+            User user =  User.builder()
+                    .email("marzh@gmail.com")
+                    .password("Qwert123$")
+                    .build();
 
             app.getUser().openLoginForm();
             app.getUser().fillLoginForm(user);

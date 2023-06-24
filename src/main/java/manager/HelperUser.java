@@ -63,6 +63,10 @@ public class HelperUser extends HelperBase{
         closePopUpWindow();
     }
 
+    public boolean isRegistrationUnsuccessful(){
+        return isElementPresent(By.xpath("//div[@class='error']"));
+    }
+
 
 
 }
