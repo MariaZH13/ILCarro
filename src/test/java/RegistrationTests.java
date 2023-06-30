@@ -29,9 +29,14 @@ public class RegistrationTests extends TestBase {
 //                .withPassword("Qwert123$");
 
         app.getUser().openRegistrationForm();
+        logger.info("openRegistrationForm invoked");
         app.getUser().fillRegistrationForm(user);
+        logger.info("fillRegistrationForm invoked");
         app.getUser().submitLoginYalla();
-        app.getUser().pause(3000);
+        logger.info("submitLoginYalla invoked");
+        logger.info("registrationPositive starts with credentials: login "
+                + user.getEmail() + " & password " + user.getPassword());
+ //       app.getUser().pause(3000);
         Assert.assertTrue(app.getUser().isLoggedSuccessful());
     }
 
