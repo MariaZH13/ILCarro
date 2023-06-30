@@ -2,7 +2,10 @@ package manager;
 
 import models.Car;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Rectangle;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -25,6 +28,7 @@ public class HelperCar extends HelperBase{
         type(By.id("seats"),car.getSeats());
         type(By.id("class"),car.getCarClass());
         type(By.id("serialNumber"),car.getCarRegNumber());
+//        clickSerialNumber(car.getCarRegNumber());
         type(By.id("price"),car.getPrice());
 //        type(By.id("about"),car.getAbout());
 
@@ -34,6 +38,24 @@ public class HelperCar extends HelperBase{
        type(By.id("pickUpPlace"),address);
        click(By.cssSelector("div.pac-item"));
     }
+    public void clickSerialNumber(String serialNumber){
+       WebElement rect = wd.findElement(By.id("serialNumber"));
+//        int x = rect.getX() + rect.getWidth() * 7 / 8;
+//        int y = rect.getY() + rect.getHeight() / 2;
+//
+        Actions actions = new Actions(wd);
+ //       actions.moveByOffset(x,y).click().sendKeys(serialNumber).perform();
+ //    variant 1
+  //     actions.moveToElement(wd.findElement(By.id("serialNumber"))).click().sendKeys(serialNumber).perform();
+ //    variant 2
+//        actions.moveToElement(wd.findElement(By.id("serialNumber")),-10,-10).click()
+//                .sendKeys(serialNumber).perform();
+        actions.moveToElement(rect).perform();
+        rect.clear();
+        rect.sendKeys(serialNumber);
+
+    }
+
 
     public void select(By locator,String option){
         new Select(wd.findElement(locator)).selectByValue(option);
