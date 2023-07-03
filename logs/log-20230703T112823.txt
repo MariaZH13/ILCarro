@@ -1,0 +1,18 @@
+11:28:36 INFO  TestBase - Method loginPositive is started
+11:28:36 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
+11:28:39 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
+11:28:39 INFO  manager.TestNgListener - Test loginPositive invoked
+11:28:39 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Log in ']
+11:28:39 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Log in '] is found
+11:28:42 INFO  manager.WebDriverListener - Start searching element ----> By.id: email
+11:28:42 INFO  manager.WebDriverListener - Element with locator ----> By.id: email is found
+11:28:43 INFO  manager.WebDriverListener - Start searching element ----> By.id: password
+11:28:43 INFO  manager.WebDriverListener - Element with locator ----> By.id: password is found
+11:28:44 INFO  manager.WebDriverListener - Start searching element ----> By.cssSelector: button[type='submit']
+11:28:44 INFO  manager.WebDriverListener - Element with locator ----> By.cssSelector: button[type='submit'] is found
+11:28:47 INFO  manager.WebDriverListener - Start searching element ----> By.cssSelector: button[type='button']
+11:28:48 INFO  manager.WebDriverListener - Element with locator ----> By.cssSelector: button[type='button'] is found
+11:28:52 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
+11:28:52 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
+11:28:52 INFO  manager.TestNgListener - Test loginPositive successful
+11:28:52 INFO  TestBase - --------------------

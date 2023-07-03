@@ -1,14 +1,12 @@
+import manager.TestNgListener;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(TestNgListener.class)
 public class LoginTests extends TestBase{
-
-    
-
-
-
 
     @BeforeMethod
     public void precondition(){

@@ -24,6 +24,7 @@ public class HelperUser extends HelperBase{
     public void fillLoginForm(String email, String password){
         type(By.id("email"),email);
         type(By.id("password"),password);
+//        type(By.id("passwo"),password);
     }
     // overloading
     public void fillLoginForm(User user){
