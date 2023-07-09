@@ -1,4 +1,4 @@
-11:27:16 INFO  TestBase - Method loginPositive is started
+11:27:16 INFO  tests.TestBase - Method loginPositive is started
 11:27:16 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
 11:27:19 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
 11:27:19 INFO  manager.TestNgListener - Test loginPositive invoked
@@ -36,4 +36,4 @@ Driver info: org.openqa.selenium.chrome.ChromeDriver
 Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.198, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: /var/folders/ly/hznt1z_11wb...}, goog:chromeOptions: {debuggerAddress: localhost:65454}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: MAC, platformName: MAC, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
 Session ID: a7e5c74bb00f1c0860a147b9cb976026
 *** Element info: {Using=id, value=passwo}
-11:27:27 INFO  TestBase - --------------------
+11:27:27 INFO  tests.TestBase - --------------------

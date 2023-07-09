@@ -69,4 +69,13 @@ public class HelperCar extends HelperBase{
                "details"));
 
     }
+
+    public boolean isCarAdd(){
+        return isElementPresent(By.xpath("//h1[.='Car added']"));
+
+    }
+
+    public void addOddCar(){
+        click(By.xpath("//button[text()='Add another car']"));
+    }
 }

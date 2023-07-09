@@ -1,4 +1,4 @@
-11:28:36 INFO  TestBase - Method loginPositive is started
+11:28:36 INFO  tests.TestBase - Method loginPositive is started
 11:28:36 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
 11:28:39 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
 11:28:39 INFO  manager.TestNgListener - Test loginPositive invoked
@@ -15,4 +15,4 @@
 11:28:52 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
 11:28:52 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
 11:28:52 INFO  manager.TestNgListener - Test loginPositive successful
-11:28:52 INFO  TestBase - --------------------
+11:28:52 INFO  tests.TestBase - --------------------

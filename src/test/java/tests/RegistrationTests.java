@@ -1,3 +1,5 @@
+package tests;
+
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -53,8 +55,9 @@ public class RegistrationTests extends TestBase {
         app.getUser().openRegistrationForm();
         app.getUser().fillRegistrationForm(user);
         app.getUser().submitLoginYalla();
-//        app.getUser().pause(3000);
-//        Assert.assertTrue(app.getUser().isLoggedSuccessful());
+        app.getUser().pause(3000);
+        Assert.assertTrue(app.getUser().isPasswordWrong());
+
     }
         @Test
         public void registrationNegativePassword () {
@@ -69,7 +72,7 @@ public class RegistrationTests extends TestBase {
             app.getUser().fillRegistrationForm(user);
             app.getUser().submitLoginYalla();
             app.getUser().pause(3000);
-            Assert.assertTrue(app.getUser().isRegistrationUnsuccessful());
+            Assert.assertTrue(app.getUser().isPasswordWrong());
         }
 
         @Test
@@ -90,9 +93,11 @@ public class RegistrationTests extends TestBase {
 
         @AfterMethod
         public void postcondition () {
+               app.getUser().closePopUpWindow();
 
-            app.getUser().closePopUpWindow();
-
+               if(app.getUser().isLogged()){
+                   app.getUser().logOut();
+               }
 
         }
 

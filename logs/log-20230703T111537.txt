@@ -1,9 +1,9 @@
-11:15:51 INFO  TestBase - Method registrationPositive is started
+11:15:51 INFO  tests.TestBase - Method registrationPositive is started
 11:15:51 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
 11:15:54 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
 11:15:54 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Sign up ']
 11:15:54 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Sign up '] is found
-11:15:57 INFO  TestBase - openRegistrationForm invoked
+11:15:57 INFO  tests.TestBase - openRegistrationForm invoked
 11:15:57 INFO  manager.WebDriverListener - Start searching element ----> By.id: name
 11:15:57 INFO  manager.WebDriverListener - Element with locator ----> By.id: name is found
 11:15:59 INFO  manager.WebDriverListener - Start searching element ----> By.id: lastName
@@ -14,13 +14,13 @@
 11:16:00 INFO  manager.WebDriverListener - Element with locator ----> By.id: password is found
 11:16:01 INFO  manager.WebDriverListener - Start searching element ----> By.cssSelector: div.checkbox-container
 11:16:01 INFO  manager.WebDriverListener - Element with locator ----> By.cssSelector: div.checkbox-container is found
-11:16:02 INFO  TestBase - fillRegistrationForm invoked
+11:16:02 INFO  tests.TestBase - fillRegistrationForm invoked
 11:16:02 INFO  manager.WebDriverListener - Start searching element ----> By.cssSelector: button[type='submit']
 11:16:02 INFO  manager.WebDriverListener - Element with locator ----> By.cssSelector: button[type='submit'] is found
-11:16:03 INFO  TestBase - submitLoginYalla invoked
-11:16:03 INFO  TestBase - registrationPositive starts with credentials: login bobb954@com.com & password Qwert123$
+11:16:03 INFO  tests.TestBase - submitLoginYalla invoked
+11:16:03 INFO  tests.TestBase - registrationPositive starts with credentials: login bobb954@com.com & password Qwert123$
 11:16:03 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //h2[contains(text(),'success')]
 11:16:05 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //h2[contains(text(),'success')] is found
 11:16:05 INFO  manager.WebDriverListener - Start searching element ----> By.cssSelector: button[type='button']
 11:16:05 INFO  manager.WebDriverListener - Element with locator ----> By.cssSelector: button[type='button'] is found
-11:16:06 INFO  TestBase - --------------------
+11:16:06 INFO  tests.TestBase - --------------------

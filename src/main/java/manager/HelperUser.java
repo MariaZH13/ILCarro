@@ -48,14 +48,14 @@ public class HelperUser extends HelperBase{
  //     variant 1
  //       click(By.cssSelector("label[for='terms-of-use']"));
 //      variant 2
-//        JavascriptExecutor js = (JavascriptExecutor) wd;
-//        js.executeScript("document.querySelector('#terms-of-use').click()");
- //     variant 3
-        Rectangle rect = wd.findElement(By.cssSelector("div.checkbox-container")).getRect();
-        int x = rect.getX() + 5;
-        int y = rect.getY() + rect.getHeight() / 4;
-        Actions actions = new Actions(wd);
-        actions.moveByOffset(x,y).click().perform();
+        JavascriptExecutor js = (JavascriptExecutor) wd;
+        js.executeScript("document.querySelector('#terms-of-use').click()");
+//      variant 3
+//        Rectangle rect = wd.findElement(By.cssSelector("div.checkbox-container")).getRect();
+//        int x = rect.getX() + 5;
+//        int y = rect.getY() + rect.getHeight() / 4;
+//        Actions actions = new Actions(wd);
+//        actions.moveByOffset(x,y).click().perform();
 
 
 
@@ -65,7 +65,7 @@ public class HelperUser extends HelperBase{
 
     public void submitLoginYalla(){
        wd.findElement(By.cssSelector("button[type='submit']")).submit();
- //      wd.findElement(By.cssSelector("button[type='submit']")).click();
+//       wd.findElement(By.cssSelector("button[type='submit']")).click();
 
     }
 
@@ -94,6 +94,10 @@ public class HelperUser extends HelperBase{
     public boolean isRegistrationUnsuccessful(){
        
         return isElementPresent(By.xpath("//div[@class='error']"));
+    }
+
+    public boolean isPasswordWrong(){
+        return isElementPresent(By.xpath("//div[@class ='ng-star-inserted']"));
     }
 
 

@@ -1,15 +1,17 @@
+package tests;
 
 import models.Car;
 import models.User;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-public class AddNewCar extends TestBase{
+public class AddNewCar extends TestBase {
 @BeforeMethod
     public void precondition(){
 
-    if(app.getUser().isLogged() == false)
-        app.getUser().login(
+    if(TestBase.app.getUser().isLogged() == false)
+        TestBase.app.getUser().login(
                 User.builder()
                         .email("marzh@gmail.com")
                         .password("Qwert123$")
@@ -32,10 +34,17 @@ public class AddNewCar extends TestBase{
             .price("150")
             .about("")
             .build();
-    app.getCar().openCarForm();
-    app.getCar().fillCarForm(car);
-    app.getUser().submitLoginYalla();
+    TestBase.app.getCar().openCarForm();
+    TestBase.app.getCar().fillCarForm(car);
+    TestBase.app.getUser().submitLoginYalla();
+    TestBase.app.getCar().isCarAdd();
 
 
+}
+
+@AfterMethod
+    public void postCondition(){
+    TestBase.app.getCar().addOddCar();
+    TestBase.app.getUser().logOut();
 }
 }

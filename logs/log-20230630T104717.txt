@@ -1,4 +1,4 @@
-10:47:35 INFO  TestBase - openRegistrationForm invoked
-10:47:40 INFO  TestBase - fillRegistrationForm invoked
-10:47:41 INFO  TestBase - submitLoginYalla invoked
-10:47:41 INFO  TestBase - registrationPositive starts with credentials: login bobb2852@com.com & password Qwert123$
+10:47:35 INFO  tests.TestBase - openRegistrationForm invoked
+10:47:40 INFO  tests.TestBase - fillRegistrationForm invoked
+10:47:41 INFO  tests.TestBase - submitLoginYalla invoked
+10:47:41 INFO  tests.TestBase - registrationPositive starts with credentials: login bobb2852@com.com & password Qwert123$

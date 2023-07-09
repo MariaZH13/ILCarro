@@ -1,4 +1,4 @@
-11:16:34 INFO  TestBase - Method loginPositive is started
+11:16:34 INFO  tests.TestBase - Method loginPositive is started
 11:16:34 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Logout ']
 11:16:37 INFO  manager.WebDriverListener - Element with locator ----> By.xpath: //a[.=' Logout '] is found
 11:16:37 INFO  manager.WebDriverListener - Start searching element ----> By.xpath: //a[.=' Log in ']
@@ -26,4 +26,4 @@ Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 1
 Session ID: 64e119dd7f040404f8eba8723b278ba8
 *** Element info: {Using=id, value=passwo}
 11:16:45 INFO  manager.WebDriverListener - This is a link to screenshot with error src/test/screenshots-1004.png
-11:16:45 INFO  TestBase - --------------------
+11:16:45 INFO  tests.TestBase - --------------------

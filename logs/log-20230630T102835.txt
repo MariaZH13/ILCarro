@@ -1,1 +1,1 @@
-10:28:58 INFO  TestBase - registrationPositive starts with credentials: login bobb1729@com.com & password Qwert123$
+10:28:58 INFO  tests.TestBase - registrationPositive starts with credentials: login bobb1729@com.com & password Qwert123$
