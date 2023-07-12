@@ -1,5 +1,6 @@
 package manager;
 
+import models.Search;
 import models.User;
 import org.testng.annotations.DataProvider;
 
@@ -32,4 +33,12 @@ public class ProviderData {
         });
         return list.iterator();
     }
+
+//    public Iterator<Object[]>searchDTO(){
+//        List<Object[]>list = new ArrayList<>();
+//        list.add(new Object[]{new Search()
+//
+//        })
+//
+//    }
 }
