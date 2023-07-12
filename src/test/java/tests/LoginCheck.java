@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import models.User;
 import org.openqa.selenium.By;
 import org.testng.Assert;
@@ -33,10 +34,9 @@ public class LoginCheck extends TestBase {
     @Test
     public void loginPositiveUser() {
 //        User user = new User("marzh@gmail.com","Qwert123$");
-        User user = User.builder()
-                .email("marzh@gmail.com")
-                .password("Qwert123$")
-                .build();
+        User user = new User()
+                .withEmail("marzh@gmail.com")
+                .withPassword("Qwert123$");
 //        user.setEmail("marzh@gmail.com");
 //        user.setPassword("Qwert123$");
         //               .withEmail("marzh@gmail.com").withPassword("Qwert123$");
@@ -51,10 +51,22 @@ public class LoginCheck extends TestBase {
 
     @Test
     public void loginPositiveUserData() {
-        User user = User.builder()
-                .email("marzh@gmail.com")
-                .password("Qwert123$")
-                .build();
+        User user = new User().withEmail("marzh@gmail.com")
+                .withPassword("Qwert123$");
+
+        TestBase.app.getUser().openLoginForm();
+        TestBase.app.getUser().fillLoginForm(user);
+        TestBase.app.getUser().submitLoginYalla();
+        TestBase.app.getUser().pause(3000);
+        Assert.assertTrue(TestBase.app.getUser().isLoggedSuccessful());
+
+    }
+    @Test(dataProvider = "userDTO",dataProviderClass = ProviderData.class)
+    public void loginPositiveUserDTO(User user) {
+//        User user = User.builder()
+//                .email("marzh@gmail.com")
+//                .password("Qwert123$")
+//                .build();
 
         TestBase.app.getUser().openLoginForm();
         TestBase.app.getUser().fillLoginForm(user);

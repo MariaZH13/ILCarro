@@ -12,10 +12,10 @@ public class AddNewCar extends TestBase {
 
     if(TestBase.app.getUser().isLogged() == false)
         TestBase.app.getUser().login(
-                User.builder()
-                        .email("marzh@gmail.com")
-                        .password("Qwert123$")
-                        .build());
+                new User()
+                        .withEmail("marzh@gmail.com")
+                        .withPassword("Qwert123$"));
+
 
 }
 

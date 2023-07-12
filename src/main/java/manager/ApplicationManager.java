@@ -20,8 +20,11 @@ public class ApplicationManager {
     EventFiringWebDriver wd;
     HelperUser user;
     HelperCar car;
+    HelperSearch search;
+
 
     String browser;
+
 
     public HelperUser getUser() {
         return user;
@@ -34,6 +37,11 @@ public class ApplicationManager {
     public HelperCar getCar() {
         return car;
     }
+
+    public HelperSearch getSearch() {
+        return search;
+    }
+
 
     //  @BeforeSuite
     public void init(){
@@ -48,6 +56,7 @@ public class ApplicationManager {
         wd.register(new WebDriverListener());
         user = new HelperUser(wd);
         car = new HelperCar(wd);
+        search = new HelperSearch(wd);
     //    wd.manage().window().maximize();
         wd.navigate().to("https://ilcarro.web.app/search");
         wd.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);

@@ -19,12 +19,11 @@ public class RegistrationTests extends TestBase {
     @Test
     public void registrationPositive() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-        User user = User.builder()
-                .name("Bobbi")
-                .lastName("Brown")
-                .email("bobb" + i + "@com.com")
-                .password("Qwert123$")
-                .build();
+        User user = new User()
+                .withName("Bobbi")
+                .withLastName("Brown")
+                .withEmail("bobb" + i + "@com.com")
+                .withPassword("Qwert123$");
 //                .withName("Bobbi")
 //                .withLastName("Brown")
 //                .withEmail("bobb" + i +"@com.com")
@@ -45,12 +44,11 @@ public class RegistrationTests extends TestBase {
     @Test
     public void registrationNegativeWrongPassWord() {
         int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-        User user = User.builder()
-                .name("Bobbi")
-                .lastName("Brown")
-                .email("bobb" + i + "@com.com")
-                .password("Qwert123")
-                .build();
+        User user = new User()
+                .withName("Bobbi")
+                .withLastName("Brown")
+                .withEmail("bobb" + i + "@com.com")
+                .withPassword("Qwert123");
 
         app.getUser().openRegistrationForm();
         app.getUser().fillRegistrationForm(user);
@@ -62,12 +60,12 @@ public class RegistrationTests extends TestBase {
         @Test
         public void registrationNegativePassword () {
             int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-            User user = User.builder()
-                    .name("Dana")
-                    .lastName("Banana")
-                    .email("fruit" + i + "@gmail.com")
-                    .password("Qwerty123")
-                    .build();
+            User user = new User()
+                    .withName("Dana")
+                    .withLastName("Banana")
+                    .withEmail("fruit" + i + "@gmail.com")
+                    .withPassword("Qwerty123");
+
             app.getUser().openRegistrationForm();
             app.getUser().fillRegistrationForm(user);
             app.getUser().submitLoginYalla();
@@ -78,12 +76,12 @@ public class RegistrationTests extends TestBase {
         @Test
         public void registrationNegativeEmail () {
             int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-            User user = User.builder()
-                    .name("Peter")
-                    .lastName("Parker")
-                    .email("spiderman" + i + ".com")
-                    .password("Spiderman123$")
-                    .build();
+            User user = new User()
+                    .withName("Peter")
+                    .withLastName("Parker")
+                    .withEmail("spiderman" + i + ".com")
+                    .withPassword("Spiderman123$");
+
             app.getUser().openRegistrationForm();
             app.getUser().fillRegistrationForm(user);
             app.getUser().submitLoginYalla();
