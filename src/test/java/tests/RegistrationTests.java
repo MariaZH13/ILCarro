@@ -1,5 +1,6 @@
 package tests;
 
+import manager.ProviderData;
 import models.User;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -24,10 +25,29 @@ public class RegistrationTests extends TestBase {
                 .withLastName("Brown")
                 .withEmail("bobb" + i + "@com.com")
                 .withPassword("Qwert123$");
+
+
+        app.getUser().openRegistrationForm();
+        logger.info("openRegistrationForm invoked");
+        app.getUser().fillRegistrationForm(user);
+        logger.info("fillRegistrationForm invoked");
+        app.getUser().submitLoginYalla();
+        logger.info("submitLoginYalla invoked");
+        logger.info("registrationPositive starts with credentials: login "
+                + user.getEmail() + " & password " + user.getPassword());
+ //       app.getUser().pause(3000);
+        Assert.assertTrue(app.getUser().isLoggedSuccessful());
+    }
+
+    @Test(dataProvider = "userDtoCSV", dataProviderClass = ProviderData.class)
+    public void registrationPositiveDTO(User user) {
+//        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
+//        User user = new User()
 //                .withName("Bobbi")
 //                .withLastName("Brown")
-//                .withEmail("bobb" + i +"@com.com")
+//                .withEmail("bobb" + i + "@com.com")
 //                .withPassword("Qwert123$");
+
 
         app.getUser().openRegistrationForm();
         logger.info("openRegistrationForm invoked");
