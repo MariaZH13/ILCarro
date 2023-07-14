@@ -45,6 +45,7 @@ public class SearchTests extends TestBase{
         app.getUser().submitLoginYalla();
         Assert.assertTrue(app.getSearch().isCarFound());
     }
+
     @AfterMethod
     public void postcondition(){
         app.getSearch().returnToMainPage();
