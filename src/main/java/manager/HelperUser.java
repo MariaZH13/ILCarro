@@ -99,6 +99,9 @@ public class HelperUser extends HelperBase{
     public boolean isPasswordWrong(){
         return isElementPresent(By.xpath("//div[@class ='ng-star-inserted']"));
     }
+    public boolean isEmailWrong(){
+        return isElementPresent(By.xpath("//div[@class ='error']"));
+    }
 
 
 }

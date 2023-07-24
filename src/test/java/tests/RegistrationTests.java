@@ -106,7 +106,7 @@ public class RegistrationTests extends TestBase {
             app.getUser().fillRegistrationForm(user);
             app.getUser().submitLoginYalla();
             app.getUser().pause(3000);
-            Assert.assertTrue(app.getUser().isPasswordWrong());
+            Assert.assertTrue(app.getUser().isEmailWrong());
         }
 
         @AfterMethod
