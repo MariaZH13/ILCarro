@@ -15,6 +15,8 @@ public class HelperCar extends HelperBase{
         super(wd);
     }
     public void openCarForm(){
+
+        pause(3000);
         click(By.xpath("//a[.=' Let the car work ']"));
     }
 
