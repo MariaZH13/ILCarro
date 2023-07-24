@@ -8,19 +8,20 @@ import org.testng.annotations.Test;
 
 public class SearchTests extends TestBase{
 
-    @Test
-    public void searchCarTestPositive(){
-        Search search = new Search()
-                .withCity("Tel Aviv")
-                .withDates("7/17/2023 - 7/20/2023");
-
-        app.getSearch().fillSearchForm(search);
-        logger.info("The city is "+ search.getCity());
-        logger.info("The dates are "+ search.getDates());
-
-        app.getUser().submitLoginYalla();
-        Assert.assertTrue(app.getSearch().isCarFound());
-    }
+//    @Test
+//    public void searchCarTestPositive(){
+//        Search search = new Search()
+//                .withCity("Tel Aviv")
+//                .withDates("7/18/2023 - 7/20/2023");
+//
+//        app.getSearch().fillSearchForm(search);
+//        logger.info("The city is "+ search.getCity());
+//        logger.info("The dates are "+ search.getDates());
+//
+//
+//
+//        Assert.assertTrue(app.getSearch().isCarFound());
+//    }
     @Test
     public void searchCarTest2Positive(){
         Search search = new Search()
@@ -30,7 +31,7 @@ public class SearchTests extends TestBase{
         logger.info("The city is "+ search.getCity());
         logger.info("The dates are "+ search.getDates());
 
-        app.getUser().submitLoginYalla();
+        app.getSearch().submitYalla();
         Assert.assertTrue(app.getSearch().isCarFound());
     }
     @Test

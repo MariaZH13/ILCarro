@@ -24,14 +24,14 @@ public class AddNewCar extends TestBase {
     int i = (int)(System.currentTimeMillis()/1000)%3600;
     Car car = Car.builder()
             .location("Tel Aviv")
-            .make("KIA")
-            .model("Sportage")
+            .make("KIA" + i)
+            .model("Sportage" + i)
             .year("2023")
             .fuel("Petrol")
-            .seats("5")
+            .seats("5" + i)
             .carClass("B")
             .carRegNumber("100-200-"+ i)
-            .price("150")
+            .price("150" + i)
             .about("")
             .build();
     TestBase.app.getCar().openCarForm();

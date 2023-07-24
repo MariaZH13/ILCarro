@@ -18,15 +18,17 @@ public class HelperSearch extends HelperBase {
 
     public void fillSearchForm(Search search) {
         fillCity(search.getCity());
+
         type(By.id("dates"), search.getDates());
 
+        submitYalla();
     }
 
     public void fillSearchFormWithDatePickerThisMonth(Search search) {
         fillCity(search.getCity());
         click(By.id("dates"));
-        click(By.xpath("//td[.=' 18 ']"));
-        click(By.xpath("//td[.=' 25 ']"));
+        click(By.xpath("//td[.=' 26 ']"));
+        click(By.xpath("//td[.=' 30 ']"));
 
     }
 
@@ -57,7 +59,6 @@ public class HelperSearch extends HelperBase {
 //        selectPeriodDaysDatePicker(dateFrom, dateTo);
 //        selectPeriodMonthsDatePicker(dateFrom, dateTo);
         selectPeriodYearsDatePicker(dateFrom, dateTo);
-
         submitYalla();
     }
 
@@ -76,6 +77,8 @@ public class HelperSearch extends HelperBase {
 
     public void submitYalla() {
         wd.findElement(By.cssSelector("button[type='submit']")).click();
+
+
 
     }
     public void selectPeriodDaysDatePicker(String dateFrom, String dateTo){
@@ -138,7 +141,6 @@ public class HelperSearch extends HelperBase {
 
         for( int i = 0; i < startToEndMonth; i++) {
             click(By.xpath("//button[@aria-label='Next month']"));
-            pause(1000);
         }
         click(By.xpath(locatorStartDate));
 
@@ -148,7 +150,6 @@ public class HelperSearch extends HelperBase {
 
         for( int i = 0; i < startToEndMonth; i++) {
             click(By.xpath("//button[@aria-label='Next month']"));
-            pause(1000);
         }
         click(By.xpath(locatorEndDate));
 

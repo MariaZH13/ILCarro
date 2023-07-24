@@ -28,7 +28,7 @@ public class RegistrationTests extends TestBase {
 
 
         app.getUser().openRegistrationForm();
-        logger.info("openRegistrationForm invoked");
+        logger.info("openRmegistrationForm invoked");
         app.getUser().fillRegistrationForm(user);
         logger.info("fillRegistrationForm invoked");
         app.getUser().submitLoginYalla();
@@ -39,14 +39,14 @@ public class RegistrationTests extends TestBase {
         Assert.assertTrue(app.getUser().isLoggedSuccessful());
     }
 
-    @Test(dataProvider = "userDtoCSV", dataProviderClass = ProviderData.class)
-    public void registrationPositiveDTO(User user) {
-//        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
-//        User user = new User()
-//                .withName("Bobbi")
-//                .withLastName("Brown")
-//                .withEmail("bobb" + i + "@com.com")
-//                .withPassword("Qwert123$");
+    @Test
+    public void registrationPositiveDTO() {
+        int i = (int) (System.currentTimeMillis() / 1000) % 3600;
+        User user = new User()
+                .withName("Bobbi")
+                .withLastName("Brown")
+                .withEmail("bobb" + i + "@com.com")
+                .withPassword("Qwert123$");
 
 
         app.getUser().openRegistrationForm();
@@ -97,16 +97,16 @@ public class RegistrationTests extends TestBase {
         public void registrationNegativeEmail () {
             int i = (int) (System.currentTimeMillis() / 1000) % 3600;
             User user = new User()
-                    .withName("Peter")
-                    .withLastName("Parker")
-                    .withEmail("spiderman" + i + ".com")
-                    .withPassword("Spiderman123$");
+                    .withName("Pit")
+                    .withLastName("Potter")
+                    .withEmail("potter" + i + ".com")
+                    .withPassword("Qwerty1234$");
 
             app.getUser().openRegistrationForm();
             app.getUser().fillRegistrationForm(user);
             app.getUser().submitLoginYalla();
             app.getUser().pause(3000);
-            Assert.assertTrue(app.getUser().isRegistrationUnsuccessful());
+            Assert.assertTrue(app.getUser().isPasswordWrong());
         }
 
         @AfterMethod

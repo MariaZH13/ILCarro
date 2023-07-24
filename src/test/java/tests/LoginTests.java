@@ -21,6 +21,7 @@ public class LoginTests extends TestBase {
     @Test
     public void loginPositive() {
         String email = "marzh@gmail.com", password = "Qwert123$";
+        logger.info("User with data " + email + ", " + password + " logged in");
         app.getUser().openLoginForm();
         app.getUser().fillLoginForm(email, password);
         app.getUser().submitLoginYalla();

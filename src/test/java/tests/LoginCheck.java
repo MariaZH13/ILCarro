@@ -14,8 +14,8 @@ public class LoginCheck extends TestBase {
     @BeforeMethod
     public void precondition() {
 
-        if (TestBase.app.getUser().isLogged()) {
-            TestBase.app.getUser().logOut();
+        if (app.getUser().isLogged()) {
+            app.getUser().logOut();
         }
     }
 
@@ -23,10 +23,19 @@ public class LoginCheck extends TestBase {
     @Test
     public void loginPositive() {
 
-        TestBase.app.getUser().openLoginForm();
-        TestBase.app.getUser().fillLoginForm("marzh@gmail.com", "Qwert123$");
-        TestBase.app.getUser().submitLoginYalla();
-        TestBase.app.getUser().pause(3000);
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm("marzh@gmail.com", "Qwert123$");
+        app.getUser().submitLoginYalla();
+        app.getUser().pause(3000);
+        Assert.assertTrue(TestBase.app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
+
+    } @Test
+    public void loginPositiveProps() {
+
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm(app.getEmail(),app.getPassword());
+        app.getUser().submitLoginYalla();
+        app.getUser().pause(3000);
         Assert.assertTrue(TestBase.app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
 
     }
@@ -41,10 +50,10 @@ public class LoginCheck extends TestBase {
 //        user.setPassword("Qwert123$");
         //               .withEmail("marzh@gmail.com").withPassword("Qwert123$");
 
-        TestBase.app.getUser().openLoginForm();
-        TestBase.app.getUser().fillLoginForm(user.getEmail(), user.getPassword());
-        TestBase.app.getUser().submitLoginYalla();
-        TestBase.app.getUser().pause(3000);
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm(user.getEmail(), user.getPassword());
+        app.getUser().submitLoginYalla();
+        app.getUser().pause(3000);
         Assert.assertTrue(TestBase.app.getUser().isElementPresent(By.xpath("//h1[.='Logged in']")));
 
     }
@@ -54,24 +63,23 @@ public class LoginCheck extends TestBase {
         User user = new User().withEmail("marzh@gmail.com")
                 .withPassword("Qwert123$");
 
-        TestBase.app.getUser().openLoginForm();
-        TestBase.app.getUser().fillLoginForm(user);
-        TestBase.app.getUser().submitLoginYalla();
-        TestBase.app.getUser().pause(3000);
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm(user);
+        app.getUser().submitLoginYalla();
+        app.getUser().pause(3000);
         Assert.assertTrue(TestBase.app.getUser().isLoggedSuccessful());
 
     }
-    @Test(dataProvider = "userDTO",dataProviderClass = ProviderData.class)
-    public void loginPositiveUserDTO(User user) {
-//        User user = User.builder()
-//                .email("marzh@gmail.com")
-//                .password("Qwert123$")
-//                .build();
+    @Test()
+    public void loginPositiveUserDTO() {
+        User user = new User()
+                .withEmail("marzh@gmail.com")
+                .withPassword("Qwert123$");
 
-        TestBase.app.getUser().openLoginForm();
-        TestBase.app.getUser().fillLoginForm(user);
-        TestBase.app.getUser().submitLoginYalla();
-        TestBase.app.getUser().pause(3000);
+        app.getUser().openLoginForm();
+        app.getUser().fillLoginForm(user);
+        app.getUser().submitLoginYalla();
+        app.getUser().pause(3000);
         Assert.assertTrue(TestBase.app.getUser().isLoggedSuccessful());
 
     }
@@ -79,8 +87,8 @@ public class LoginCheck extends TestBase {
     @AfterMethod
     public void postcondition() {
 
-        if (TestBase.app.getUser().isLoggedSuccessful()) {
-            TestBase.app.getUser().closePopUpWindow();
+        if (app.getUser().isLoggedSuccessful()) {
+            app.getUser().closePopUpWindow();
 //            app.getUser().closePopUpWindow();
 //            app.getUser().logOut();
 
