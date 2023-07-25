@@ -28,7 +28,7 @@ public class AddNewCar extends TestBase {
             .model("Sportage" + i)
             .year("2023")
             .fuel("Petrol")
-            .seats("5" + i)
+            .seats("5")
             .carClass("B")
             .carRegNumber("100-200-"+ i)
             .price("150" + i)
